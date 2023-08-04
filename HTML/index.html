@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
     <style>
-      P::before{
-        content:'';
-        display: block;
-        width: 20px;
-        height: 20px;
-        background-color: green;
-        border:none;
-        border-radius: 50px;
+      #first {
+        background-color: red;
+        height: 100px;
       }
-      p:after{
-        content:'New message';
-        background-color: gray;
-        color:black;
+      #second{
+        background-color: blue;
+        height: 100px;
         opacity: 0.5;
-        border:none;
-        border-radius: 50px;
+        position: absolute;
+        top:10px;
       }
     </style>
 </head>
 <body>
- <p>Lorem ipsum</p>
+  <div id="first">
+    First div
+  </div>
+  <div id="second">
+    Second div
+  </div>
+  <div id="first">
+    First div
+  </div>
+  <div id="first">
+    First div
+  </div>
 </body>
 </html>
