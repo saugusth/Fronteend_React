@@ -1,0 +1,4 @@
+let x = 5;
+
+const bigInt = 1214132314142341234321413241413431241421414324343434n;
+console.log(typeof(bigInt))
