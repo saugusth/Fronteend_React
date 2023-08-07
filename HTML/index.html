@@ -2,34 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-      #first {
-        background-color: red;
-        height: 100px;
-      }
-      #second{
-        background-color: blue;
-        height: 100px;
-        opacity: 0.5;
-        position: absolute;
-        top:10px;
-      }
-    </style>
 </head>
 <body>
-  <div id="first">
-    First div
-  </div>
-  <div id="second">
-    Second div
-  </div>
-  <div id="first">
-    First div
-  </div>
-  <div id="first">
-    First div
-  </div>
+  <h1>DOM Selectors</h1>
+  <div id="hello">Hello world</div>
+  <div>Hello there</div>
+
+  <ul>
+    <li class="green">item 1</li>
+    <li >item 2</li>
+    <li class="green">item 3</li>
+    <li >item 4</li>
+  </ul>
+
+  <script>
+    //console.log(document.getElementById('hello'))
+
+    //console.log(document.getElementsByClassName('green'));
+
+    //console.log(document.getElementsByTagName('li'));
+
+    //let items = document.querySelector('.green');
+
+    //console.log(items);
+
+    let items = document.querySelectorAll('.green');
+    console.log(items);
+  </script>
+
 </body>
 </html>
