@@ -28,8 +28,20 @@
 
     //console.log(items);
 
-    let items = document.querySelectorAll('.green');
-    console.log(items);
+    // let items = document.querySelectorAll('.green');
+    // console.log(items);
+
+    //console.dir(document);
+    //console.log(document.domain);
+    //console.log(document.URL);
+    document.title = 'dom manipulation'
+
+    const body = document.body;    
+    const div = document.createElement('div');
+    console.log(div);
+    div.innerText = "Javascript";
+    body.appendChild(div);
+
   </script>
 
 </body>
