@@ -1,32 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
  
-class Counter extends React.Component{
-  constructor(props){
-    super(props)
-    this.state ={
-      count:0
-    }
-  }
+function Counter(){
+  const [count, setCount] = useState(0);
 
-  render(){
-    return (
-      <div>
-        <p>you clicked the button {this.state.count} times</p>
-        <button onClick={() => this.setState({count: this.state.count + 1})}>
-          click me
-        </button>
-      </div>
-    )
-  }
+  useEffect(() => {
+    console.log("Component Mounted");
+    const handleClick = () => setCount((c) => c + 1);
+    document.addEventListener('click', handleClick);
+    
+    return () => {
+      console.log("Component unmounted");
+      document.removeEventListener('click',handleClick );
+    }
+
+  }, [])
+
+  useEffect(() => {
+    console.log("Count updated");
+    document.title = `Count: ${count} `
+  }, [count])
+
+  return(
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  )
 }
 
 function App() {
-  const [count, setCount] = useState(0)
-  return (
-    <div>
-     <Counter/>
-    </div>
-  )
+  return (<div><Counter/></div>)
 }
 
 export default App
